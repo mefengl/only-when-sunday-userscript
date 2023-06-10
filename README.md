@@ -1,5 +1,9 @@
 # Only When Sunday UserScript
 
+[![GitHub stars](https://img.shields.io/github/stars/mefengl/only-when-sunday-userscript?style=social)](https://github.com/mefengl/only-when-sunday-userscript)
+[![Follow on GitHub](https://img.shields.io/github/followers/mefengl?label=Follow%20%40mefengl&style=social)](https://github.com/mefengl)
+[![Twitter Follow](https://img.shields.io/twitter/follow/mefengl?style=social)](https://twitter.com/mefengl)
+
 🏖️ The "Only When Sunday" UserScript is a JavaScript-based browser automation tool that redirects specific websites to a designated URL every day of the week, except Sunday.
 
 ## Usage
