@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.0.4
+// @version      0.0.5
 // @description  🏖️ Redirects specific websites to WeRead.qq.com/web/shelf except sunday
 // @match        *://*/*
 // @grant        none
@@ -12,10 +12,21 @@
 (() => {
   'use strict';
 
+  const websiteRedirectTo = 'https://weread.qq.com/web/shelf';
+  const websitesToRedirect = [
+    'twitter.com',
+    'weibo.com',
+    'youtube.com',
+    'outlook.live.com',
+    'spotify.com',
+    'bilibili.com',
+    'discord.com',
+    'ddys.art'
+  ];
+
   if (new Date().getDay() !== 0) {
-    const websitesToRedirect = ['twitter.com', 'weibo.com', 'youtube.com', 'outlook.live.com', 'spotify.com', 'bilibili.com', 'discord.com'];
     if (websitesToRedirect.some(website => window.location.href.includes(website))) {
-      window.location.href = 'https://weread.qq.com/web/shelf';
+      window.location.href = websiteRedirectTo;
     }
   }
 })();
