@@ -13,7 +13,10 @@ The script currently targets the following websites:
 - `twitter.com`
 - `weibo.com`
 - `youtube.com`
-- `outlook.com`
+- `outlook.live.com`
+- `spotify.com`
+- `bilibili.com`
+- `discord.com`
 
 If you visit any of these sites, the script will redirect you to `https://weread.qq.com/web/shelf` unless it's Sunday.
 
