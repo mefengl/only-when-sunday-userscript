@@ -13,15 +13,15 @@
   'use strict';
 
   const websitesToClose = [
+    'bilibili.com',
+    'ddys.art',
+    'discord.com',
+    'greasyfork.org',
+    'outlook.live.com',
+    'spotify.com',
     'twitter.com',
     'weibo.com',
     'youtube.com',
-    'outlook.live.com',
-    'spotify.com',
-    'bilibili.com',
-    'discord.com',
-    'ddys.art',
-    'greasyfork.org',
   ];
 
   if (new Date().getDay() !== 0) {
