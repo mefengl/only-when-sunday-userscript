@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.0.6
+// @version      0.0.7
 // @description  🏖️ Closes specific websites tabs except Sunday
 // @match        *://*/*
 // @grant        none
@@ -20,7 +20,8 @@
     'spotify.com',
     'bilibili.com',
     'discord.com',
-    'ddys.art'
+    'ddys.art',
+    'greasyfork.org',
   ];
 
   if (new Date().getDay() !== 0) {
