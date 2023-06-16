@@ -17,6 +17,7 @@ The script currently targets the following websites:
 - `spotify.com`
 - `bilibili.com`
 - `discord.com`
+- ...
 
 If you visit any of these sites on a day other than Sunday, the tab will be closed automatically.
 
