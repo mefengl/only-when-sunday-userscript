@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.0.7
+// @version      0.0.8
 // @description  🏖️ Closes specific websites tabs except Sunday
 // @match        *://*/*
 // @grant        none
@@ -21,6 +21,7 @@
     'spotify.com',
     'twitter.com',
     'weibo.com',
+    'weread.qq.com',
     'youtube.com',
   ];
 
