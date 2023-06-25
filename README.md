@@ -27,6 +27,12 @@ This script is created for personal use, but you can easily modify it to suit yo
 
 - **Target websites**: Modify the `websitesToClose` array in the script to include the websites you want to be closed automatically. Just replace or add the desired URLs to the array.
 
+## Credits
+
+[china-holiday-calender](https://github.com/lanceliao/china-holiday-calender) @lanceliao
+
+Check if today is a workday using that library's data.
+
 ## License
 
 This project is licensed under the terms of the MIT license. For more details, see the `LICENSE` file.
