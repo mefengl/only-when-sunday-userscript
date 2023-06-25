@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.1.0
+// @version      0.1.1
 // @description  🏖️ Closes specific websites tabs except Sunday
 // @match        *://*/*
 // @grant        none
@@ -12,13 +12,7 @@
 (() => {
   'use strict';
 
-  const icsString = getIcsString();
-  const eventBlocks = icsString.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/g);
-  const specialDates = eventBlocks.map(block => {
-    const dtstart = block.match(/DTSTART:(\d{8})T\d{6}/)[1];
-    const dtend = block.match(/DTEND:(\d{8})T\d{6}/)[1];
-    return { start: dtstart, end: dtend };
-  });
+  const specialDates = getSpecialDates();
 
   const websitesToClose = [
     'bilibili.com',
@@ -39,6 +33,16 @@
     }
   }
 })();
+
+function getSpecialDates() {
+  const icsString = getIcsString();
+  const eventBlocks = icsString.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/g);
+  return eventBlocks.map(block => {
+    const dtstart = block.match(/DTSTART:(\d{8})T\d{6}/)[1];
+    const dtend = block.match(/DTEND:(\d{8})T\d{6}/)[1];
+    return { start: dtstart, end: dtend };
+  });
+}
 
 /*
   * 以下内容来自 https://github.com/lanceliao/china-holiday-calender
