@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.1.1
+// @version      0.1.2
 // @description  🏖️ Closes specific websites tabs except Sunday
 // @match        *://*/*
 // @grant        none
@@ -24,6 +24,7 @@
     'twitter.com',
     'weibo.com',
     'youtube.com',
+    'zhihu.com',
   ];
 
   const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, '');
