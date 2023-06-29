@@ -21,6 +21,7 @@
     'greasyfork.org',
     'outlook.live.com',
     'spotify.com',
+    'sspai.com',
     'twitter.com',
     'weibo.com',
     'youtube.com',
