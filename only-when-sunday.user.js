@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.3.0
+// @version      0.3.1
 // @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
@@ -39,12 +39,15 @@
 
   const isWorkingHours = (currentHour > 9 && currentHour < 18) || (currentHour === 9 && currentMinute >= 30) || (currentHour === 18 && currentMinute <= 30);
 
-  if (new Date().getDay() !== 0 || specialDates.some(date => currentDate >= date.start && currentDate <= date.end)) {
-    if (websitesToClose.some(website => window.location.href.includes(website))) {
-      window.close();
-    }
+  if (new Date().getDay() === 0) {
+    // No restrictions on Sunday
+    return;
   } else if (isWorkingHours) {
     if (websitesToCloseDuringWork.some(website => window.location.href.includes(website))) {
+      window.close();
+    }
+  } else if (specialDates.some(date => currentDate >= date.start && currentDate <= date.end)) {
+    if (websitesToClose.some(website => window.location.href.includes(website))) {
       window.close();
     }
   }
