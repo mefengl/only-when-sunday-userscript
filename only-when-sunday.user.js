@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.3.1
+// @version      0.3.4
 // @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
@@ -36,20 +36,24 @@
   const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, '');
   const currentHour = new Date().getHours();
   const currentMinute = new Date().getMinutes();
+  const currentDay = new Date().getDay();
 
+  const isSunday = currentDay === 0;
   const isWorkingHours = (currentHour > 9 && currentHour < 18) || (currentHour === 9 && currentMinute >= 30) || (currentHour === 18 && currentMinute <= 30);
+  const isWorkingDay = currentDay >= 1 && currentDay <= 5;
+  const isWorkingDayNotWorkingHours = isWorkingDay && !isWorkingHours;
 
-  if (new Date().getDay() === 0) {
+  if (isSunday) {
     // No restrictions on Sunday
     return;
-  } else if (isWorkingHours) {
-    if (websitesToCloseDuringWork.some(website => window.location.href.includes(website))) {
-      window.close();
-    }
-  } else if (specialDates.some(date => currentDate >= date.start && currentDate <= date.end)) {
-    if (websitesToClose.some(website => window.location.href.includes(website))) {
-      window.close();
-    }
+  }
+
+  if (isWorkingHours && (websitesToClose.some(website => window.location.href.includes(website)) || websitesToCloseDuringWork.some(website => window.location.href.includes(website)))) {
+    window.close();
+  }
+
+  if (isWorkingDayNotWorkingHours && specialDates.some(date => currentDate >= date.start && currentDate <= date.end) && websitesToClose.some(website => window.location.href.includes(website))) {
+    window.close();
   }
 })();
 
