@@ -2,8 +2,8 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.1.2
-// @description  🏖️ Closes specific websites tabs except Sunday
+// @version      0.3.0
+// @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
 // @license      MIT
@@ -28,9 +28,23 @@
     'zhihu.com',
   ];
 
+  const websitesToCloseDuringWork = [
+    'github.com',
+    'hellogithub.com',
+  ];
+
   const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  const currentHour = new Date().getHours();
+  const currentMinute = new Date().getMinutes();
+
+  const isWorkingHours = (currentHour > 9 && currentHour < 18) || (currentHour === 9 && currentMinute >= 30) || (currentHour === 18 && currentMinute <= 30);
+
   if (new Date().getDay() !== 0 || specialDates.some(date => currentDate >= date.start && currentDate <= date.end)) {
     if (websitesToClose.some(website => window.location.href.includes(website))) {
+      window.close();
+    }
+  } else if (isWorkingHours) {
+    if (websitesToCloseDuringWork.some(website => window.location.href.includes(website))) {
       window.close();
     }
   }
