@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.3.4
+// @version      0.3.5
 // @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
@@ -18,7 +18,6 @@
     'bilibili.com',
     'ddys.art',
     'discord.com',
-    'greasyfork.org',
     'outlook.live.com',
     'spotify.com',
     'sspai.com',
@@ -30,6 +29,7 @@
 
   const websitesToCloseDuringWork = [
     'github.com',
+    'greasyfork.org',
     'hellogithub.com',
   ];
 
