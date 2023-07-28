@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.3.5
+// @version      0.3.6
 // @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
@@ -28,7 +28,6 @@
   ];
 
   const websitesToCloseDuringWork = [
-    'github.com',
     'greasyfork.org',
     'hellogithub.com',
   ];
