@@ -2,7 +2,7 @@
 // @name         Only When Sunday
 // @namespace    https://github.com/mefengl
 // @author       mefengl
-// @version      0.3.6
+// @version      0.3.7
 // @description  🏖️ Closes specific websites tabs except Sunday and different ones on weekdays from 9:30 to 18:30
 // @match        *://*/*
 // @grant        none
@@ -25,6 +25,7 @@
     'weibo.com',
     'youtube.com',
     'zhihu.com',
+    'telegram.org',
   ];
 
   const websitesToCloseDuringWork = [
